@@ -62,7 +62,6 @@ main {
     border: unset;
     height: 43px;
     width: 285px;
-
 }
 
 #voir_wallet {
@@ -78,11 +77,23 @@ main {
 
 
 #balance_transactions {
-    background-color: #121821;
     color: #E8EEF7;
     border-radius: 16px;
+    height: 422px;
+    width: 325px;
+}
+
+#balance {
+    background-color:#121821;
+    border-radius: 16px;
+    height: 154px;
+    width: 325px;
     padding: 18px 20px;
-    margin: 10px;
+    margin-top: 10px;
+}
+
+.text-info {
+    
 }
 
 #console {
