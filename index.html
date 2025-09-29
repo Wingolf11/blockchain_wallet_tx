@@ -7,6 +7,38 @@
     <title>Blockchain Wallet TX</title>
 </head>
 <body>
+    <main>
+        <h1 class="text-h1">Wallet Viewer</h1>
+
+        <h2 class="text-h2">Entrer une addresse de Wallet pour visualiser l'ensemble des transactions</h2>
+
+        <section id="address_eth">
+            <form>
+                <h2 class="text-h2">Address Ethereum</h2>
+                <input id="address_input" type="text" placeholder="0x..." required>
+                <br>
+                <button type="submit" id="voir_wallet">Voir le Wallet</button>
+            </form>
+            <h3 class="text-h3">Astuce : essayez l’adresse de Vitalik : 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</h3>
+        </section>
+
+        <section id="balance_transactions">
+            <div>
+                <h1 class="section_h1">Sold ETH</h1>
+                <h2 class="text-h2">0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</h2>
+                <h1 class="section_h1">29.585487 ETH</h1>
+            </div>
+            <div>
+                <h1 class="section_h1">Transactions récentes</h1>
+
+            </div>
+        </section>
+
+        <section id="console">
+            <h1 class="section_h1">console</h1>
+            <div id="console"></div>
+        </section>
+    </main>
     
 </body>
 </html>
