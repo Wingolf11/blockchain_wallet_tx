@@ -291,6 +291,8 @@ section#console {
 }
 
 .console_output_line {
+    max-width: 257px;
+    min-height: 54px;
     font-family: 'Space Mono', monospace;
     font-weight: 400;
     font-size: 12px;
