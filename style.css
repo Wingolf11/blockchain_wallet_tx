@@ -1,16 +1,66 @@
 :root {
-    --bg-color: #0b0f14;
+    --bg-color-main: #0B0F14;
+    --bg-color-section: #121821;
+    --bg-color-address-input: #0D131B;
+    --bg-color-voir-wallet-button: #5CC8FF;
+    --bg-color-voir-transaction-button: #FFFFFF;
+    --text-color-main-title: #FFFFFF;
+    --text-color-astuce-subtitle: #A5B1C2;
+    --text-color-primary: #E8EEF7;
+    --text-color-input: #545454;
+    --text-color-in-transaction: #1DD1A1;
+    --text-color-out-transaction: #FF6B6B;
+    --text-color-voir-wallet-transaction-button: #000000;
+    --border-color: #FFFFFF0F;
+    --border-radius-input-button: 12px;
+    --border-radius-sections: 16px;
     font-family: "roboto", sans-serif;
 }
 
-*{
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: white;
-    margin: 0px;
+    background-color: var(--bg-color-main);
+    min-height: 100vh;
+    line-height: 1;
+}
+
+.page_wrapper {
+    width: 100%;
+    max-width: 421px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 64px 48px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    max-width: 325px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+header h1.mobile_title {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--text-color-main-title);
+    font-weight: 700;
+}
+
+header p#header_subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--text-color-astuce-subtitle);
 }
 
 main {
@@ -19,115 +69,69 @@ main {
     align-items: center;
 }
 
-article {
+section#wallet_search {
+    background-color: var(--bg-color-section);
+    width: 100%;
+    max-width: 325px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-input-button);
+    border: 1px solid var(--border-color);
+    padding: 18px 20px;
     display: flex;
-
+    flex-direction: column;
+    gap: 12px;
 }
 
-.section_h1 {
-    color: #E8EEF7;
-    font-weight: bold;
-    font-size: 24px;
+#wallet_search form {
+    width: 100%;
+    max-width: 285px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
-.text-h1 {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.text-h2 {
-    font-size: 16px;
-    color: #A5B1C2;
-}
-
-.text-h3 {
-    font-size: 12px;
-    color: #E8EEF7;
-    font-weight: normal;
-    text-align: center;
-}
-
-.text-info {
-    color: #E8EEF7;
+#wallet_search label {
+    color: var(--text-color-primary);
+    font-weight: 400;
+    line-height: 1;
     font-size: 16px;
 }
 
-articles {
-    height: 172px;
-    width: 285px;
-    padding: 8px;
-}
-
-#transactions {
-    background-color: #121821;
-    height: 252px;
-    width: 325px;
-    padding: 18px 20px;
-    border-radius: 16px;
-    margin-top: 16px;
-}
-
-#address_eth {
-    background-color: #121821;
-    border-radius: 16px;
-    padding: 18px 20px;
-    height: 219px;
-    width: 325px;
-}
-
-#address_input {
-    background-color: #0D131B;
-    border-radius: 12px;
+#wallet_search input {
+    width: 100%;
+    max-width: 285px;
+    min-height: 43px;
     padding: 12px 14px;
-    border: unset;
-    height: 43px;
-    width: 285px;
+    border-radius: var(--border-radius-input-button);
+    border: 1px solid var(--border-color);
+    color: var(--text-color-input);
+    font-size: 14px;
+    line-height: 1;
+    background-color: var(--bg-color-address-input);
 }
 
-#voir_wallet {
-    background-color: #5CC8FF;
+#wallet_search input + button {
+}
+
+#wallet_search button {
+    background-color: var(--bg-color-voir-wallet-button);
+    color: var(--text-color-voir-wallet-transaction-button);
+    border-radius: var(--border-radius-input-button);
+    border: unset;
+    max-width: 285px;
+    min-height: 43px;
     padding: 12px 16px;
-    border-radius: 12px;
-    border: unset;
-    height: 43px;
-    width: 285px;
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#wallet_search button:hover {
+    background-color: #85ccf0;
+    transform: translateY(-2px);
 }
 
 
-#balance_transactions {
-    color: #E8EEF7;
-    border-radius: 16px;
-    height: 422px;
-    width: 325px;
-}
 
-#balance {
-    background-color:#121821;
-    border-radius: 16px;
-    height: 154px;
-    width: 325px;
-    padding: 18px 20px;
-    margin-top: 10px;
-}
 
-.text-info {
-    
-}
-
-#console {
-    background-color: #121821;
-    border-radius: 16px;
-    padding: 18px 20px;
-    margin-top: 24px;
-}
-
-#console_output {
-    background-color: #0D131B;
-    border-radius: 16px;
-    height: 81px;
-    width: 285px;
-    padding: 12px 14px;
-    border:unset;
-}
