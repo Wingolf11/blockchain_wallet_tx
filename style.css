@@ -1,7 +1,7 @@
 :root {
     --bg-color-main: #0B0F14;
     --bg-color-section: #121821;
-    --bg-color-address-input: #0D131B;
+    --bg-color-address-input-console: #0D131B;
     --bg-color-voir-wallet-button: #5CC8FF;
     --bg-color-voir-transaction-button: #FFFFFF;
     --text-color-main-title: #FFFFFF;
@@ -95,6 +95,7 @@ section#wallet_search {
     font-weight: 400;
     line-height: 1;
     font-size: 16px;
+    margin-bottom: 12px;
 }
 
 #wallet_search input {
@@ -107,10 +108,7 @@ section#wallet_search {
     color: var(--text-color-input);
     font-size: 14px;
     line-height: 1;
-    background-color: var(--bg-color-address-input);
-}
-
-#wallet_search input + button {
+    background-color: var(--bg-color-address-input-console);
 }
 
 #wallet_search button {
@@ -128,9 +126,182 @@ section#wallet_search {
 }
 
 #wallet_search button:hover {
-    background-color: #85ccf0;
+    background-color: #00aaff;
     transform: translateY(-2px);
 }
+
+#wallet_search p#astuce_wallet_info {
+    color: var(--text-color-astuce-subtitle);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    line-height: 1;
+}
+
+section#balance_transactions {
+    width: 100%;
+    max-width: 325px;
+    margin-top: 24px;
+    min-height: 422px;
+    gap: 16px;
+}
+
+#balance_transactions section#balance {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 325px;
+    max-height: 154px;
+    padding: 18px 20px;
+    gap: 12px;
+    border-radius: var(--border-radius-sections);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color-section);
+}
+
+.section_h1 {
+    color: var(--text-color-primary);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#balance span#address_display {
+    color: var(--text-color-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    word-wrap: break-word;
+}
+
+#balance span#balance_amount_display {
+    color: var(--text-color-primary);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#balance_transactions section#transactions {
+    width: 100%;
+    margin-top: 16px;
+    max-width: 325px;
+    min-height: 252px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius-sections);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color-section);
+}
+
+.transaction_item {
+    width: 100%;
+    max-width: 285px;
+    min-height: 43px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+}
+
+.in_transaction {
+    color: var(--text-color-in-transaction);
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.out_transaction {
+    color: var(--text-color-out-transaction);
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.transaction_amount {
+    color: var(--text-color-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.voir_transaction_button {
+    border-radius: var(--border-radius-input-button);
+    background-color: var(--bg-color-voir-transaction-button);
+    color: var(--text-color-voir-wallet-transaction-button);
+    padding: 12px 16px;
+    max-width: 62px;
+    min-height: 43px;
+    gap: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: unset;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.voir_transaction_button:hover {
+    background-color:#A5B1C2;
+    transform: translateY(-2px);
+}
+
+hr {
+    width: 100%;
+    max-width: 285px;
+    height: 1px;
+    border: unset;
+    background-color: #303844;
+    margin: 8px auto;
+}
+
+section#console {
+    width: 100%;
+    max-width: 325px;
+    min-height: 157px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: var(--border-radius-sections);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color-section);
+    margin-top: 24px;
+}
+
+#console h1.console_title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    color: var(--text-color-primary);
+}
+
+#console div#console_output {
+    background-color: var(--bg-color-address-input-console);
+    width: 100%;
+    max-width: 285px;
+    min-height: 81px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: var(--border-radius-input-button);
+    border: 1px solid var(--border-color);
+}
+
+.console_output_line {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--text-color-primary);
+    word-wrap: break-word;
+}
+
+
+
+
 
 
 
