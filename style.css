@@ -10,7 +10,7 @@
 body {
     background-color: var(--bg-color);
     color: white;
-    margin: 0;
+    margin: 0px;
 }
 
 main {
@@ -50,6 +50,12 @@ article {
 .text-info {
     color: #E8EEF7;
     font-size: 16px;
+}
+
+articles {
+    height: 172px;
+    width: 285px;
+    padding: 8px;
 }
 
 #transactions {
@@ -114,4 +120,14 @@ article {
     background-color: #121821;
     border-radius: 16px;
     padding: 18px 20px;
+    margin-top: 24px;
+}
+
+#console_output {
+    background-color: #0D131B;
+    border-radius: 16px;
+    height: 81px;
+    width: 285px;
+    padding: 12px 14px;
+    border:unset;
 }
