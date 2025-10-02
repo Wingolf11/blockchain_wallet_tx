@@ -17,11 +17,13 @@
 
         <main>
             <section id="wallet_search">
-                <form>
+                <form id="wallet_form">
                     <label for="address_eth">Address Ethereum</label>
-                    <input id="wallet_address_input" type="text" name="wallet_address" pattern="^0x[a-fA-F0-9]{40}$" placeholder="0x..." required>
-                    <br>
-                    <button type="submit" id="voir_wallet_button" class="primary_button">Voir le Wallet</button>
+                    <div class="input_button">                        
+                        <input id="wallet_address_input" type="text" name="wallet_address" pattern="^0x[a-fA-F0-9]{40}$" placeholder="0x..." required>
+                        <br>
+                        <button type="submit" id="voir_wallet_button" class="primary_button">Voir le Wallet</button>
+                    </div>
                 </form>
                 <p id="astuce_wallet_info">Astuce: essayez l`adresse de Vitalik: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</p>
             </section>
