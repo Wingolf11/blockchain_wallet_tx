@@ -95,7 +95,7 @@ section#wallet_search {
     flex-direction: column;
 }
 
-#wallet_search label {
+#wallet_search h1 {
     color: var(--text-color-primary);
     font-weight: 400;
     line-height: 1;
