@@ -1,13 +1,10 @@
 Cosas que hacer: 
 
-3- Como usar una API (Utilizar postman!!) + (Tests funcionalidades e inputs + pensar en la seguridad del projecto)
-    3.1- buscar wallet (cuidado error handling, ver template)
-    3.2- visulizar ultimas 5 transacciones
-    3.3- boton voir hacer busquedas.
-    3.4- Imprimir en consola interna del projecto
-    (Atencion! Utilisar V2: docs.etherscan.io)
-
-4- Buscar como funciona el local storage
+1- Como usar una API (Utilizar postman!!) + (Tests funcionalidades e inputs + pensar en la seguridad del projecto)
+    1.1- visulizar ultimas 5 transacciones
+    1.2- boton voir hacer busquedas.
+    1.3- Imprimir en consola interna del projecto
+    1.4- Add local storage
 
 DETALLES: serch: viewBtn.disabled para "Voir Wallet"!!!
 	-ft async 
