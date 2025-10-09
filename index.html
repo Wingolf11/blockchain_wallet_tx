@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Blockchain Wallet TX</title>
+</head>
+<body>
+    <div class="page_wrapper">
+        <header>
+            <h1 class="mobile_title">Wallet Viewer</h1>
+            <p id="header_subtitle">Entrer une addresse de Wallet pour visualiser l'ensemble des transactions</p>
+        </header>
+
+        <main>
+            <section id="wallet_search">
+                <form id="wallet_form">
+                    <h1>Address Ethereum</h1>
+                    <div class="input_button">                        
+                        <input id="wallet_address_input" type="text" name="wallet_address" pattern="^0x[a-fA-F0-9]{40}$" placeholder="0x..." required>
+                        <br>
+                        <button type="submit" id="voir_wallet_button" class="primary_button">Voir le Wallet</button>
+                    </div>
+                </form>
+                <p id="astuce_wallet_info">Astuce: essayez l`adresse de Vitalik: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</p>
+            </section>
+
+            <section id="balance_transactions">
+                <section id="balance">
+                    <h1 class="section_h1">Sold ETH</h1>
+                    <span id="address_display">0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</span>
+                    <span id="balance_amount_display">29.585487 ETH</span>
+                </section>
+            
+                <section id="transactions">
+                    <h1 class="section_h1">Transactions récentes</h1>
+                    <article class="transaction_item">
+                        <span class="in_transaction">IN</span>
+                        <span class="transaction_amount">0.0001 ETH</span>
+                        <button class="voir_transaction_button">Voir</button>
+                    </article>
+                    <hr>
+                    <article class="transaction_item">
+                        <span class="out_transaction">OUT</span>
+                        <span class="transaction_amount">0.0001 ETH</span>
+                        <button class="voir_transaction_button">Voir</button>
+                    </article>
+                    <hr>
+                    <article class="transaction_item">
+                        <span class="in_transaction">IN</span>
+                        <span class="transaction_amount">0.5241 ETH</span>
+                        <button class="voir_transaction_button">Voir</button>
+                    </article>
+                    <hr>
+                </section>
+            </section>
+
+            <section id="console">
+                <h1 class="console_title">Console</h1>
+                <div id="console_output">
+                    <span class="console_output_line">Chargement du wallet 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</span>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>
