@@ -1,7 +1,9 @@
 import API_KEY from './config.js';
+//const API_KEY = 'APIKEY';
 
 const address_display = document.getElementById("address_display");
 const balance_amount_display = document.getElementById("balance_amount_display");
+const transactionSection = document.getElementById("transactions");
 
 
 function convertWei(result) {
@@ -10,11 +12,38 @@ function convertWei(result) {
     let eth = firstPart + "." + secondPart;
     let trimedETH = eth.replace(/\.?0+$/, ""); //removes unnassesary 0 if its the case.
 
+    console.log("Balance: ", trimedETH);
     return trimedETH;
 }
 
-function displayTransactions(transactionData) {
-    
+function displayTransactions(transactionData, walletAddress) {
+    try {
+        if (!transactionData || !Array.isArray(transactionData)) {
+            throw new Error ("No available data for transactions, check fetch or expected an array !");
+        }
+        //Removes current transactions content and html:
+        transactionSection.querySelectorAll(".transaction_item, hr").forEach(el => el.remove());
+        
+        transactionData.slice(0, 5).forEach(transaction => {
+            const transactionType = transaction.to.toLowerCase() === walletAddress.toLowerCase();
+            const amount = convertWei(transaction.value);
+
+            const article = document.createElement("article");
+            article.classList.add("transaction_item");
+
+            article.innerHTML = `
+                <span class="${transactionType ? "in_transaction" : "out_transaction"}">${transactionType ? "IN" : "OUT"}</span>
+                <span class="transaction_amount">${amount} ETH</span>
+                <a href="https://etherscan.io/tx/${transaction.hash}" target= "_blank" title= "https://etherscan.io/tx/..." class="voir_transaction_button">Voir</a>
+            `;
+            const hr = document.createElement("hr");
+            transactionSection.appendChild(article);
+            transactionSection.appendChild(hr);
+        });
+
+    } catch (error) {
+        console.error(error.message);
+    }
 }
 
 async function fetchDataTransactions(walletAddress) {
@@ -32,6 +61,7 @@ async function fetchDataTransactions(walletAddress) {
         } else {
             //console.log("✅ Success:", transactionData);
             //Call display function:
+            displayTransactions(transactionData.result, walletAddress);
         }
     } catch (error) {
         console.error("Fetch failed:", error.message);
@@ -63,7 +93,7 @@ async function fetchDataBalance(walletAddress) {
         const data = await response.json();
         
         //To check raw data:
-            /*console.log("Raw response:", data);*/
+        //console.log("Raw response:", data);
 
         if (!data.status || data.status === "0") {
             throw new Error (`Aucun résultat trouvé !`);

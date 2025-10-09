@@ -4,7 +4,11 @@ Cosas que hacer:
     1.1- visulizar ultimas 5 transacciones
     1.2- boton voir hacer busquedas.
     1.3- Imprimir en consola interna del projecto
-    1.4- Add local storage
+    1.4- Add local storage:
+            -Implementar local storage directamente: crear un objeto solo con la data necesaria.
+                Si online usa la data actualizada y la guarda en localStorage/
+                Si offline ya esta guardada en localStorage entonces no hay problema.
+                => No hay necesidad de check si online o no. El programa funciona regardless.
 
 DETALLES: serch: viewBtn.disabled para "Voir Wallet"!!!
 	-ft async 

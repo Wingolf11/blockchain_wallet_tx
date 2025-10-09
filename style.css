@@ -116,6 +116,12 @@ section#wallet_search {
     background-color: var(--bg-color-address-input-console);
 }
 
+#wallet_search input:focus {
+    background-color: var(--bg-color-address-input-console);
+    color: var(--text-color-primary);
+    outline: none;
+}
+
 #wallet_search button {
     background-color: var(--bg-color-voir-wallet-button);
     color: var(--text-color-voir-wallet-transaction-button);
@@ -235,6 +241,7 @@ section#balance_transactions {
 }
 
 .voir_transaction_button {
+    text-decoration: none;
     border-radius: var(--border-radius-input-button);
     background-color: var(--bg-color-voir-transaction-button);
     color: var(--text-color-voir-wallet-transaction-button);
@@ -350,6 +357,12 @@ section#console {
         max-width: 752px;
         min-height: 43px;
         margin-right: 12px;
+    }
+
+    #wallet_search input:focus {
+        background-color: var(--bg-color-address-input-console);
+        color: var(--text-color-primary);
+        outline: none;
     }
 
     #wallet_search p#astuce_wallet_info {
