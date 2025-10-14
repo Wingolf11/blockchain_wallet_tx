@@ -1,8 +1,6 @@
 Cosas que hacer: 
 
 1- Como usar una API (Utilizar postman!!) + (Tests funcionalidades e inputs + pensar en la seguridad del projecto)
-    1.1- visulizar ultimas 5 transacciones
-    1.2- boton voir hacer busquedas.
     1.3- Imprimir en consola interna del projecto
     1.4- Add local storage:
             -Implementar local storage directamente: crear un objeto solo con la data necesaria.
@@ -15,4 +13,8 @@ DETALLES: serch: viewBtn.disabled para "Voir Wallet"!!!
 	-Usar try, throw error, catch, finally!!!
 
 
+
+
+Fix: ERRORS DISPLAYS
+Then go to console
 

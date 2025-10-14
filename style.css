@@ -152,27 +152,26 @@ section#wallet_search {
     line-height: 1;
 }
 
-section#balance_transactions {
+#balance_transactions {
     width: 100%;
+    align-items: stretch;
     max-width: 325px;
     margin-top: 24px;
-    min-height: 422px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-#balance_transactions section#balance {
+#balance, #transactions {
     width: 100%;
-    max-width: 325px;
-    max-height: 154px;
+    flex: 1;
     padding: 18px 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
     border-radius: var(--border-radius-sections);
     border: 1px solid var(--border-color);
     background-color: var(--bg-color-section);
+    gap: 12px;
 }
 
 .section_h1 {
@@ -189,23 +188,19 @@ section#balance_transactions {
     word-wrap: break-word;
 }
 
+.plain-text {
+    color: var(--text-color-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    word-wrap: break-word;    
+}
+
 #balance span#balance_amount_display {
     color: var(--text-color-primary);
     font-size: 24px;
     font-weight: bold;
     line-height: 1;
-}
-
-#balance_transactions section#transactions {
-    width: 100%;
-    max-width: 325px;
-    min-height: 252px;
-    padding: 18px 20px;
-    display: flex;
-    flex-direction: column;
-    border-radius: var(--border-radius-sections);
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-color-section);
 }
 
 .transaction_item {
@@ -369,7 +364,23 @@ section#console {
         text-align: left;
     }
 
-    section#balance_transactions {
+    #balance_transactions {
+        width: 100%;
+        align-items: stretch;
+        max-width: 931px;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    #balance, #transactions {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* section#balance_transactions {
         width: 100%;
         max-width: 931px;
         min-height: 294px;
@@ -394,7 +405,7 @@ section#console {
         max-width: 457.5px;
         min-height: 294px;
         padding: 18px 20px;
-    }
+    } */
 
     .transaction_item {
         width: 100%;

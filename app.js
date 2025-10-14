@@ -24,6 +24,7 @@ function displayTransactions(transactionData, walletAddress) {
         //Removes current transactions content and html:
         transactionSection.querySelectorAll(".transaction_item, hr").forEach(el => el.remove());
         
+        //console.log(transactionData);
         transactionData.slice(0, 5).forEach(transaction => {
             const transactionType = transaction.to.toLowerCase() === walletAddress.toLowerCase();
             const amount = convertWei(transaction.value);
