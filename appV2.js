@@ -156,6 +156,7 @@ function displayBalance(walletData) {
     }
 }
 
+//MAIN:
 //Event "Voir Wallet" button:
 document.getElementById('wallet_form').addEventListener('submit', async function(e) {
     e.preventDefault();
