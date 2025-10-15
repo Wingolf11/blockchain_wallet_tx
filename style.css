@@ -380,33 +380,6 @@ section#console {
         flex-direction: column;
     }
 
-    /* section#balance_transactions {
-        width: 100%;
-        max-width: 931px;
-        min-height: 294px;
-        margin-top: 24px;
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-    }
-
-    #balance_transactions section#balance {
-        width: 100%;
-        max-width: 457.5px;
-        max-height: 294px;
-        padding: 18px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    #balance_transactions section#transactions {
-        width: 100%;
-        max-width: 457.5px;
-        min-height: 294px;
-        padding: 18px 20px;
-    } */
-
     .transaction_item {
         width: 100%;
         max-width: 417.5px;
