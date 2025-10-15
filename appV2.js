@@ -2,8 +2,9 @@ import API_KEY from './config.js';
 //const API_KEY = 'APIKEY';
 
 const address_display = document.getElementById("address_display");
-const balance_amount_display = document.getElementById("balance_amount_display");
+let balance_amount_display = document.getElementById("balance_amount_display");
 const transactionSection = document.getElementById("transactions");
+let balance = document.getElementById("balance");
 
 function convertWei(result) {
     let firstPart = BigInt(result) / 10n**18n;
@@ -121,7 +122,6 @@ function displayTransactions(walletData) {
     }
 }
 
-//Display data balance:
 function displayBalance(walletData) {
     try {
         if (!walletData) {
@@ -131,9 +131,11 @@ function displayBalance(walletData) {
             let trimedETH = walletData.balance;
 
             address_display.textContent = walletData.wallet;
-            if (!balance_amount_display) {
-                document.getElementById("balance_amount_display").appendChild(balance_amount_display);
-                balance_amount_display.textContent = `${trimedETH} ETH`;
+            if (!document.getElementById("balance_amount_display")) {
+                //console.log("IF STATEMENT");
+                balance_amount_display = document.createElement('span');
+                balance_amount_display.id = "balance_amount_display";
+                balance.appendChild(balance_amount_display);
             }
             balance_amount_display.textContent = `${trimedETH} ETH`;
         }
