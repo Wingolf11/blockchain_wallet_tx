@@ -186,7 +186,7 @@ function displayBalance(walletData) {
 document.getElementById('wallet_form').addEventListener('submit', async function(e) {
     e.preventDefault();
     //Remove the .console_output_line span sample:
-    document.querySelectorAll(".console_output_line")[0]?.remove();
+    document.querySelectorAll(".console_output_line_default")[0]?.remove();
 
     const walletAddress = document.getElementById("wallet_address_input").value.trim();
     displayConsole(walletAddress);

@@ -307,6 +307,15 @@ section#console {
     word-wrap: break-word;
 }
 
+.console_output_line_default {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--text-color-primary);
+    word-wrap: break-word;
+}
+
 .error {
     font-family: 'Space Mono', monospace;
     font-weight: 400;
