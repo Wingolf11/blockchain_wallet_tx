@@ -5,6 +5,7 @@ const address_display = document.getElementById("address_display");
 let balance_amount_display = document.getElementById("balance_amount_display");
 const transactionSection = document.getElementById("transactions");
 let balance = document.getElementById("balance");
+let console_output = document.getElementById("console_output");
 
 function convertWei(result) {
     let firstPart = BigInt(result) / 10n**18n;
@@ -14,6 +15,24 @@ function convertWei(result) {
 
     //console.log("Balance: ", trimedETH);
     return trimedETH;
+}
+
+function displayConsole (walletAddress, type) {
+    const consoleLine = document.createElement("span");
+    const logDate = new Date().toLocaleString();
+    consoleLine.classList.add("console_output_line");
+    switch(type) {
+        case 'error':
+            consoleLine.innerHTML = `<span class="console_output_line"><span class = "error">[${logDate}]-ERREUR: </span>Aucun résulat trouvé pour: ${walletAddress}</span>`;
+            break;
+        case 'success':
+            consoleLine.innerHTML = `<span class="console_output_line"><span class = "success">[${logDate}]-FOUND: </span>Résulat trouvé pour: ${walletAddress}</span>`;
+            break;
+        default:
+            consoleLine.innerHTML = `<span class="console_output_line">[${logDate}]-Chargement du wallet ${walletAddress}</span>`;
+            break;
+    }
+    console_output.appendChild(consoleLine);
 }
 
 //Fetches data and saves localy:
@@ -48,8 +67,11 @@ async function fetchData (walletAddress) {
                 walletData.transactions.inAndOut.push(tx.to.toLowerCase() === walletAddress.toLowerCase());
                 walletData.transactions.transactionLinks.push(tx.hash);
             });
+
             localStorage.setItem("walletData", JSON.stringify(walletData));
             
+            displayConsole(walletAddress, "success");
+
             return walletData; 
         }
     } catch (error) {
@@ -58,7 +80,7 @@ async function fetchData (walletAddress) {
     }
 }
 
-function errorBehaviour () {
+function errorBehaviour (walletAddress) {
     //Balance elements:
     address_display.innerHTML = '<span id="address_display">Aucun résultat trouvé !</span>';
     balance_amount_display.remove();
@@ -69,16 +91,19 @@ function errorBehaviour () {
     article.classList.add("plain-text");
     article.innerHTML = '<span class="plain-text">Aucun résultat trouvé !</span>';
     transactionSection.appendChild(article);
+    
+    displayConsole(walletAddress, "error");
 }
 
 function offlineBehaviour (walletAddress) {
     try {
-        const stored = localStorage.getItem("walletData");
+        let stored = localStorage.getItem("walletData");
         if (stored) {
             const walletData = JSON.parse(stored);
             if (walletData.wallet === walletAddress) {
                 displayBalance(walletData);
                 displayTransactions(walletData);
+                displayConsole(walletAddress, "success");
                 return true;
             } else {
                 throw new Error ("No internet connection and no stored data for this wallet");
@@ -160,12 +185,16 @@ function displayBalance(walletData) {
 //Event "Voir Wallet" button:
 document.getElementById('wallet_form').addEventListener('submit', async function(e) {
     e.preventDefault();
+    //Remove the .console_output_line span sample:
+    document.querySelectorAll(".console_output_line")[0]?.remove();
+
     const walletAddress = document.getElementById("wallet_address_input").value.trim();
+    displayConsole(walletAddress);
     if (!navigator.onLine) {
         //offline function:
         let offlineStatus = offlineBehaviour(walletAddress);
         if (offlineStatus == false) {
-            errorBehaviour();
+            errorBehaviour(walletAddress);
         }
     }
     else {
@@ -177,7 +206,7 @@ document.getElementById('wallet_form').addEventListener('submit', async function
             let balanceStatus = displayBalance(walletData);
             let transactionStatus = displayTransactions(walletData);
             if (balanceStatus == false && transactionStatus == false) {
-                errorBehaviour();
+                errorBehaviour(walletAddress);
             }
         }
     }

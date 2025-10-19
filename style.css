@@ -307,6 +307,24 @@ section#console {
     word-wrap: break-word;
 }
 
+.error {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--text-color-out-transaction);
+    word-wrap: break-word;
+}
+
+.success {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    color: rgb(13, 189, 13);
+    word-wrap: break-word;
+}
+
 @media (min-width: 1024px) {
     .page_wrapper {
         width: 100%;
